@@ -1,4 +1,4 @@
-package entity;
+package app;
 
 public class GameApp {
 	// create a field
@@ -6,8 +6,8 @@ public class GameApp {
 	
 	// create a constracter
 	public GameApp() {}
-	public GameApp(String i) {   //GameAppクラスのitemフィールドにiを代入
-		this.item = i;
+	public GameApp(String item) {   //GameAppクラスのitemフィールドにiを代入
+		this.item = item;
 	}
 		
 	public String start (String p) {
