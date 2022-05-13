@@ -42,7 +42,8 @@ body {
     <p><%=result%></p>
   </div>
 
-  <form action="appStart.jsp" method="post">
+<form action="StartAppServlet" method="post">
+
     <label>ユーザ名：</label>
     <input type="text" name="name">
     <br>

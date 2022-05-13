@@ -1,4 +1,4 @@
-package entity;
+package app;
 
 //	      request.setCharacterEncoding("UTF-8");
 //	      String name = request.getParameter("name");  //HTMLのnameを表示
@@ -25,14 +25,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import app.GameApp;
-
 
 
 /**
  * Servlet implementation class StartAppServlet
  */
-@WebServlet("/StartAppServlet")               //アノテーションで対応するURLを確認できる！ ""内にURLを記入
+@WebServlet("/StartAppServlet")             //アノテーションで対応するURLを確認できる！ ""内にURLを記入
 public class StartAppServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
@@ -48,19 +46,22 @@ public class StartAppServlet extends HttpServlet {
   /**
    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
    */
+
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // TODO Auto-generated method stub
-    response.getWriter().append("Served at: ").append(request.getContextPath());
+	  
+     response.getWriter().append("Served at: ").append(request.getContextPath());
   }
 
   /**
    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
    */
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // TODO Auto-generated method stub
+    
+	// TODO Auto-generated method stub
     // doGet(request, response);
       //入力値取得
-	  request.setCharacterEncoding("UTF-8");             //appStartの文字コードを取得する
+	  ((HttpServletRequest) request).setCharacterEncoding1("UTF-8");             //appStartの文字コードを取得する
       String name = request.getParameter("name");        //nameをリクエストし、新しくname変数に代入
 
      if (name != null && !name.isEmpty()) {
@@ -78,7 +79,7 @@ public class StartAppServlet extends HttpServlet {
 
      }
      
-     request.getRequestDispatcher("appStart.jsp").forward(request, response);
+     ((String) request.getRequestDispatcher("appStart.jsp")).forward(request, response);
 
 }
 
