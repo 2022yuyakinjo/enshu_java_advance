@@ -2,7 +2,6 @@
   pageEncoding="UTF-8"%>
 <%
     // 必要な処理を記述してください。
-
 %>
 <!DOCTYPE html>
 <html>
@@ -14,11 +13,9 @@ body {
     border: solid 2px #000080;
     padding: 5px;
 }
-
 .box {
     margin: 5px;
 }
-
 .box label {
     display: inline-block;
     width: 90px;
