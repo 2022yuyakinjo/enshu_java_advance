@@ -61,7 +61,7 @@ public class StartAppServlet extends HttpServlet {
 	// TODO Auto-generated method stub
     // doGet(request, response);
       //入力値取得
-	  ((HttpServletRequest) request).setCharacterEncoding1("UTF-8");             //appStartの文字コードを取得する
+	  ((HttpServletRequest) request).setCharacterEncoding("UTF-8");             //appStartの文字コードを取得する
       String name = request.getParameter("name");        //nameをリクエストし、新しくname変数に代入
 
      if (name != null && !name.isEmpty()) {
@@ -79,7 +79,7 @@ public class StartAppServlet extends HttpServlet {
 
      }
      
-     ((String) request.getRequestDispatcher("appStart.jsp")).forward(request, response);
+     (request.getRequestDispatcher("appStart.jsp")).forward(request, response);
 
 }
 

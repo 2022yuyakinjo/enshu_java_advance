@@ -1,18 +1,19 @@
 <%@ page import="app.GameApp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-  <%
-    request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-    String result = "未実施";
-    if (name != null && !name.isEmpty()) {
-        // GameAppクラスのオブジェクトを作成
-        // (引数付きコンストラクタで、itemフィールドに "何か" をセット)
-        GameApp app = new GameApp("何か");
-        // GameAppオブジェクトのstartメソッドを呼ぶ
-        result = app.start(name);
-    }
-%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%--   <% --%>
+<!-- //     request.setCharacterEncoding("UTF-8"); -->
+<!-- //     String name = request.getParameter("name"); -->
+<!-- //     String result = "未実施"; -->
+<!-- //     if (name != null && !name.isEmpty()) { -->
+<!-- //         // GameAppクラスのオブジェクトを作成 -->
+<!-- //         // (引数付きコンストラクタで、itemフィールドに "何か" をセット) -->
+<!-- //         GameApp app = new GameApp("何か"); -->
+<!-- //         // GameAppオブジェクトのstartメソッドを呼ぶ -->
+<!-- //         result = app.start(name); -->
+<!-- //     } -->
+<%-- %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,15 +33,17 @@ body {
 </style>
 </head>
 <body>
-
   <h1>Java応用 - 演習問題1</h1>
+  <h2>ゲームアプリ実行</h2>
+<!--       <h3>アプリの実行結果</h3> -->
 
-  <h2>ゲームアプリ実行ページ</h2>
+  <c:if test="${not empty result}"> 
+<!--  result内が空でないとき、resultを -->
+    <div class="result">    <!--     クラスresultにCSSを入力-->
+    <p>${requestScope.result}</p>
+      </div>
+	</c:if>
 
-  <div class="result">
-    <h3>アプリの実行結果</h3>
-    <p><%=result%></p>
-  </div>
 
 <form action="StartAppServlet" method="post">
 
