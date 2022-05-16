@@ -47,10 +47,16 @@ body {
 
 <form action="StartAppServlet" method="post">
 
-    <label>ユーザ名：</label>
-    <input type="text" name="name">
+    <label>名前：</label>
+    <input type="text" name="name" value=""><br>
+	<label>アプリ：</label>
+	<input type="radio" name="g" value="trump" checked>トランプ
+<!-- 	選択肢を一つだけに選ばせるにはnameの値を同じにする -->
+	<input type="radio" name="g" value="game">ゲーム
+
     <br>
     <button type="submit">実行</button>
   </form>
 </body>
 </html>
+
