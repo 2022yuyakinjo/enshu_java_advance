@@ -1,4 +1,4 @@
-package app;
+
 
 public abstract class GameApp implements App {
 	// create a field

@@ -17,4 +17,5 @@ public class CardGameApp extends GameApp  {
 		return  "ババ抜きを行います。";
 
 	}
+    
 }
